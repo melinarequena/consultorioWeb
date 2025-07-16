@@ -6,7 +6,10 @@
     <title>Consultorio Web</title>
     <link rel="stylesheet" href="./../../src/css/output.css">
 </head>
-<body class="bg-stone-100">
+<body class="bg-stone-100" style="margin: auto;">
+
+
+
     <div class="flex min-h-full flex-col justify-center px-6 py-20 lg:px-8 "> 
         <div>
             <div class="sm:mx-auto sm:w-full sm:max-w-sm" >
@@ -42,47 +45,44 @@
     <?php
     if(isset($_POST['user']) && isset($_POST['pass'])){
         require_once "./../Controllers/login-controller.php";
-        if($error == '!U'){
+        if(isset($error) && $error == '!U'){
     ?>
-        <div id="toast-default" class="flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800 fixed top-5 right-5" role="alert">
-            <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-blue-500 bg-blue-100 rounded-lg dark:bg-blue-800 dark:text-blue-200">
-                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.147 15.085a7.159 7.159 0 0 1-6.189 3.307A6.713 6.713 0 0 1 3.1 15.444c-2.679-4.513.287-8.737.888-9.548A4.373 4.373 0 0 0 5 1.608c1.287.953 6.445 3.218 5.537 10.5 1.5-1.122 2.706-3.01 2.853-6.14 1.433 1.049 3.993 5.395 1.757 9.117Z"/>
-                </svg>
-                <span class="sr-only">Error icon</span>
-            </div>
-            <div class="ms-3 text-sm font-normal">Usuario inexistente.</div>
-            <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-default" aria-label="Close">
-                <span class="sr-only">Close</span>
-                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                </svg>
-            </button>
+        
+        <div role="alert" class="flex items-start bg-red-300 border-l-4 border-red-500 p-4 rounded-md justify-center mx-auto" style="display:flex; justify-content:center; width:30%; padding:5px; background-color: #FFC3C3; border-radius:10px">
+        <!-- Icono de advertencia / error -->
+        <img class="w-5 h-5" src="https://www.svgrepo.com/show/379925/alert-error.svg" style="margin-top: 10px; width: 40px; margin-right:10px" viewBox="0 0 24 24" stroke="currentColor">
+
+        <div class="ml-3 flex-1">
+            <p class="font-semibold text-red-800">Error</p>
+            <p class="mt-1 text-sm text-red-700">
+            Usuario inexistente. Por favor, inténtalo de nuevo más tarde.
+            </p>
         </div>
-    <?php
-    }else{
-        if($error == '!HP'){
-    ?>
-        <div id="toast-default" class="flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow-sm dark:text-gray-400 dark:bg-gray-800 fixed top-5 right-5" role="alert">
-            <div class="inline-flex items-center justify-center shrink-0 w-8 h-8 text-blue-500 bg-blue-100 rounded-lg dark:bg-blue-800 dark:text-blue-200">
-                <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.147 15.085a7.159 7.159 0 0 1-6.189 3.307A6.713 6.713 0 0 1 3.1 15.444c-2.679-4.513.287-8.737.888-9.548A4.373 4.373 0 0 0 5 1.608c1.287.953 6.445 3.218 5.537 10.5 1.5-1.122 2.706-3.01 2.853-6.14 1.433 1.049 3.993 5.395 1.757 9.117Z"/>
-                </svg>
-                <span class="sr-only">Error icon</span>
-            </div>
-            <div class="ms-3 text-sm font-normal">Contraseña incorrecta.</div>
-            <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-default" aria-label="Close">
-                <span class="sr-only">Close</span>
-                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                </svg>
-            </button>
         </div>
 
+
     <?php
-        } 
-    }
-}
+        }else{
+            if(isset($error) && $error == '!HP'){
+                
     ?>
+    <div role="alert" class="flex items-start bg-red-300 border-l-4 border-red-500 p-4 rounded-md justify-center mx-auto" style="display:flex; justify-content:center; width:30%; padding:5px; background-color: #FFC3C3; border-radius:10px">
+        <!-- Icono de advertencia / error -->
+        <img class="w-5 h-5" src="https://www.svgrepo.com/show/379925/alert-error.svg" style="margin-top: 10px; width: 40px; margin-right:10px" viewBox="0 0 24 24" stroke="currentColor">
+
+        <div class="ml-3 flex-1">
+            <p class="font-semibold text-red-800">Error</p>
+            <p class="mt-1 text-sm text-red-700">
+            Contraseña incorrecta. Por favor, inténtalo de nuevo más tarde.
+            </p>
+        </div>
+        </div>
+        
+    <?php
+            }
+        }
+    }
+    ?>
+
 </body>
 </html>
