@@ -26,10 +26,8 @@
                 if($passDB == $passw){
                     require_once "./../Controllers/session-controller.php"; //creamos la sesion
                     $error = '';
-                    echo 'todo ok';
                 }else{
                     $error = '!HP'; //contrase;a incorrecta
-                    echo 'mala password';
                 }
             }
         }
