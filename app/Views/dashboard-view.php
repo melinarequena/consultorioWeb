@@ -11,12 +11,9 @@
         <h2 style="padding: 20px;">Melina</h2>
         <ul class="flex">
             <li>
-                
                 <button style="padding: 20px;">
                     <a href="pacientes-view.php">Pacientes</a>
-                </button>
-                
-                
+                </button>    
             </li>
             <li>
                 <button style="padding: 20px;">
@@ -35,8 +32,5 @@
             </li>
         </ul>
     </nav>
-
-
-
 </body>
 </html>
