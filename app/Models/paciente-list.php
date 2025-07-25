@@ -16,21 +16,34 @@
                     <td>'.$paciente['paciente_doi'].'</td>
                     <td><a>Acceso a la HC</a></td>
                     <td>
-                        <form method="post" action="">
+                        <form method="post" action="./../Models/deletePaciente-model.php">
                             <input type="hidden" name="paciente_id" value='.$paciente['paciente_dni'].'>
                             <button style="cursor: pointer" type="submit"> X </button>
                         </form>
 
                         
-                        <button style="cursor: pointer" class="open-modificarPaciente-modal"> M </button>
+                        <button 
+                            style="cursor: pointer" 
+                            class="open-modificarPaciente-modal" 
+                            data-dni="'.$paciente['paciente_dni'].'" 
+                            data-nombre="'.$paciente['paciente_nombre'].'" 
+                            data-apellido="'.$paciente['paciente_apellido'].'" 
+                            data-email="'.$paciente['paciente_email'].'" 
+                            data-telefono="'.$paciente['paciente_telefono'].'" 
+                            data-doi="'.$paciente['paciente_doi'].'"> 
+                            M 
+                        </button>
+                        
+
+                        
                         
                         
                     </td>
                 <tr>';
         }
+
+        // require_once "./../Controllers/modificarPaciente-controller.php";
         
     }
-        require_once "./../Models/deletePaciente-model.php";
-        require_once "./../Models/modificarPaciente-model.php";
 
 ?>

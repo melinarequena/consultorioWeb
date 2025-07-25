@@ -25,6 +25,7 @@ if($validarPaciente->rowCount() == 0){
 
     if($nuevoPaciente->rowCount() == 1){
         $error = '';
+        echo '<script>window.location.href="./../Views/pacientes-view.php";</script>'; //refresheo automatico para que se vean los cambios
     }else{
         $error = '!P';
     }

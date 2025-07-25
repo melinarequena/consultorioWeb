@@ -1,4 +1,4 @@
- <?php
+<?php
     require_once "main-model.php";
     if(isset($_POST['paciente_id'])){
         $dni = $_POST['paciente_id'];

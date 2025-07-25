@@ -49,7 +49,7 @@
 
 
 
-    <div class="modal" id="modal-newPaciente" style="display: none;"">
+    <div class="modal" id="modal-newPaciente" style="display: none;">
         <div class="modal-background" style="background-color:gray;"></div>
         <div class="modal-content" style="background-color: bisque;">
             NUEVO USUARIO
@@ -143,38 +143,34 @@
     <script src="./../../public/js/modal-newPaciente.js"></script>
 
     <div class="modal" id="modal-modificarPaciente" style="display: none;">
-        <div class="modal-background" style="background-color:gray; width:100dvw; height:100dvh;"></div>
+        <div class="modal-background" style="background-color:#DDDDDD66;"></div>
         <div class="modal-content" style="background-color: bisque;">
             MODIFICAR DATOS DEL PACIENTE
-            <form method="post" action="">
+            <form method="post" action="./../Controllers/modificarPaciente-controller.php">
+                <input type="hidden" name="dni" id="paciente_dni_modificar">
                 <label>
                     Nombre
-                    <input type="text" name="nombre">
+                    <input type="text" name="nombre" id="paciente_nombre_modificar">
                 </label>
 
                 <label>
                     Apellido
-                    <input type="text" name="apellido">
+                    <input type="text" name="apellido" id="paciente_apellido_modificar">
                 </label>
 
                 <label>
                     Email
-                    <input type="text" name="email">
+                    <input type="text" name="email" id="paciente_email_modificar">
                 </label>
 
                 <label>
                     Telefono
-                    <input type="text" name="telefono">
-                </label>
-
-                <label>
-                    DNI
-                    <input type="text" name="dni">
+                    <input type="text" name="telefono" id="paciente_telefono_modificar">
                 </label>
 
                 <label>
                     Fecha de Nacimiento
-                    <input type="date" name="doi">
+                    <input type="date" name="doi" id="paciente_doi_modificar">
                 </label>
 
                 <button type="submit" style="cursor: pointer;">Modificar</button>
